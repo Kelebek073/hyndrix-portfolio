@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="Style.js">
+
 <style>
  
 </style>
@@ -430,25 +431,36 @@
         </div>
       </div>
       <div class="contact-form reveal">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="John Smith">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="john@company.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Project Type</label>
-          <input type="text" class="form-input" placeholder="e.g. E-commerce website, Landing page...">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project, timeline, and budget..."></textarea>
-        </div>
-        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Thanks! I\'ll be in touch soon 🚀')">
-          Send Message →
-        </button>
+        <form action="https://formspree.io/f/mykvoajv" method="POST"></form>
+         <div class="form-group">
+      <label class="form-label">Your Name</label>
+      <input type="text" name="name" class="form-input" placeholder="John Smith" required />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input type="email" name="email" class="form-input" placeholder="john@company.com" required />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Project Type</label>
+      <input type="text" name="project-type" class="form-input" placeholder="e.g. E-commerce website, Landing page..." />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Message</label>
+      <textarea name="message" class="form-textarea" placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+    </div>
+
+    <!-- Redirect back to your site after submit -->
+    <input type="hidden" name="_next" value="https://YOUR-SITE.netlify.app/thanks.html" />
+
+    <!-- Email subject line you'll see in inbox -->
+    <input type="hidden" name="_subject" value="New message from your portfolio!" />
+
+    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+      Send Message →
+    </button>
       </div>
     </div>
   </section>
@@ -456,7 +468,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-copy">
-      © 2025 <span>Hyndrix Lim</span>. Crafted with ❤️ in the Philippines.
+      © 2025 <span>Hyndrix Lim</span>. Crafted with in the Philippines.
     </div>
     <div class="footer-socials">
       <a href="https://github.com/" target="_blank" class="social-btn" title="GitHub">GH</a>
