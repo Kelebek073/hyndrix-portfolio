@@ -30,6 +30,17 @@
     <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
   </nav>
 
+  <!-- Loader overlay (shown first) -->
+  <div id="page-loader">
+    <div class="ripple-wrap">
+      <div class="ripple-ring"></div>
+      <div class="ripple-ring"></div>
+      <div class="ripple-ring"></div>
+      <div class="ripple-core"></div>
+    </div>
+    <span class="loader-label">Loading...</span>
+  </div>
+
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
@@ -526,5 +537,23 @@
     }, { threshold: 0.5 });
     statsObserver.observe(document.querySelector('.stats-row'));
   </script>
+
+  <script>
+    // Hides the loader once the full page (images, fonts, etc.) is ready
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('page-loader');
+
+      // Small delay so it doesn't flash too fast on fast connections
+      setTimeout(() => {
+        loader.classList.add('hide');
+
+        // Remove from DOM after fade-out finishes
+        loader.addEventListener('transitionend', () => {
+          loader.remove();
+        }, { once: true });
+      }, 3000);
+    });
+  </script>
+
 </body>
 </html>
