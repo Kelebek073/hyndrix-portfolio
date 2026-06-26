@@ -457,6 +457,15 @@ section { padding: 100px 60px; }
 .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 .tech-pill { background: var(--bg3); border-radius: 6px; padding: 3px 10px; font-size: 0.72rem; color: var(--muted); }
 
+.project-thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+}
+
+
 /* ── SERVICES ── */
 .services-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -574,14 +583,13 @@ footer {
 .social-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
 
 /* ── See More Button ── */
-.hidden-projects {
-  display: none;
-  grid-column: 1 / -1;
-  gap: 20px;
+.hidden-project {
+    display: none;
 }
-.hidden-projects.show {
-  display: grid;
-  animation: fadeUp 0.5s ease;
+.hidden-project.show {
+    display: flex;
+    flex-direction: column;
+    animation: fadeUp .5s ease;
 }
 .see-more-btn {
   margin-top: 30px;

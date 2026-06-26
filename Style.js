@@ -1,25 +1,43 @@
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("seeMoreBtn");
-  const more = document.getElementById("moreProjects");
+console.log(modal);
+console.log(video);
+console.log(document.querySelectorAll(".open-video"));
 
-  if (!btn || !more) {
-    console.log("Missing button or hidden section");
-    return;
-  }
 
-  let open = false;
+document.querySelectorAll(".open-video").forEach(button => {
 
-  btn.addEventListener("click", function () {
-    open = !open;
+    button.addEventListener("click", function(e){
 
-    if (open) {
-      more.classList.add("show");
-      btn.textContent = "Show Less Projects";
-    } else {
-      more.classList.remove("show");
-      btn.textContent = "See More Projects";
-    }
-  });
+        e.preventDefault();
+
+        source.src = this.dataset.video;
+        video.load();
+
+        modal.classList.add("show");
+
+        video.play();
+
+    });
+
 });
-</script>
+
+function closeVideo(){
+
+    modal.classList.remove("show");
+
+    video.pause();
+
+    video.currentTime = 0;
+
+}
+
+document.querySelector(".close-video").onclick = closeVideo;
+
+modal.addEventListener("click", function(e){
+
+    if(e.target === modal){
+
+        closeVideo();
+
+    }
+
+});

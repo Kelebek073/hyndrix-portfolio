@@ -154,7 +154,9 @@
   <!-- PROJECTS -->
   <section id="projects" class="projects">
     <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Selected Work</h2>
+    <h2 class="section-title">Selected Work</h2> 
+
+    <!-- Project 1 -->
     <div class="projects-grid">
       <div class="project-card reveal">
         <img class="project-thumb thumb-1" src="images/Untitled design (3).png" alt="Project thumbnail">
@@ -174,6 +176,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 2 -->
       <div class="project-card reveal">
         <img class="project-thumb thumb-1" src="images/Untitled design (2).png" alt="Project thumbnail">
         <div class="project-body">
@@ -192,6 +196,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 3 -->
       <div class="project-card reveal">
         <img class="project-thumb thumb-1" src="images/Untitled design (4).png" alt="Project thumbnail">
         <div class="project-body">
@@ -210,6 +216,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 4 -->
       <div class="project-card reveal">
         <img class="project-thumb thumb-1" src="images/4.png">
         <div class="project-body">
@@ -229,6 +237,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 5 -->
        <div class="project-card reveal">
         <img class="project-thumb thumb-1" src="images/Landing Page.png" alt="Project thumbnail">
         <div class="project-body">
@@ -245,6 +255,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 6 -->
        <div class="project-card reveal">
         <img class="project-thumb thumb-1" src="images/6.png" alt="Project thumbnail">
         <div class="project-body">
@@ -261,10 +273,10 @@
           </div>
         </div>
       </div>
-      <div id="moreProjects" class="hidden-projects">
 
-      <div class="project-card reveal">
-        <img class="project-thumb" src="Image/project7.png" alt="">
+      <!-- Hidden Projects -->
+      <div class="project-card reveal hidden-project">
+        <video class="project-thumb" autoplay muted loop playsinline><source src="video/PROJECT 004.mp4" type="video/mp4">Your browser does not support the video tag.</video>
         <div class="project-body">
           <span class="project-tag">Web Development</span>
           <div class="project-name">E-commerce Website</div>
@@ -274,53 +286,20 @@
           </div>
           <p class="project-desc">Modern e-commerce store optimized for conversions and mobile shopping experience.</p>
           <div class="project-links">
-            <a href="#" class="project-link" target="_blank">Live →</a>
+            <a href="#" class="project-link open-video" data-video="video/PROJECT 004.mp4">Live →</a>
             <a href="#contact" class="project-link" style="color:var(--muted);">Contact →</a>
           </div>
         </div>
-      </div>
-
-      <div class="project-card reveal">
-        <img class="project-thumb" src="Image/project8.png" alt="">
-        <div class="project-body">
-          <span class="project-tag">Landing Page</span>
-          <div class="project-name">SaaS Landing Page</div>
-          <div class="project-tech">
-            <span class="tech-pill">Figma</span>
-            <span class="tech-pill">Webflow</span>
-          </div>
-          <p class="project-desc">High-conversion SaaS landing page designed for lead generation and signups.</p>
-          <div class="project-links">
-            <a href="#" class="project-link" target="_blank">Live →</a>
-            <a href="#contact" class="project-link" style="color:var(--muted);">Contact →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <img class="project-thumb" src="Image/project9.png" alt="">
-        <div class="project-body">
-          <span class="project-tag">Corporate Website</span>
-          <div class="project-name">Brand Identity Website</div>
-          <div class="project-tech">
-            <span class="tech-pill">HTML</span>
-            <span class="tech-pill">CSS</span>
-          </div>
-          <p class="project-desc">Corporate branding website focused on trust, clarity, and business growth.</p>
-          <div class="project-links">
-            <a href="#" class="project-link" target="_blank">Live →</a>
-            <a href="#contact" class="project-link" style="color:var(--muted);">Contact →</a>
-          </div>
-        </div>
+      </div>  
       </div>
     </div>
     </div>
-
             <!-- 🔘 BUTTON -->
             <button id="seeMoreBtn" class="see-more-btn">
               See More Projects
             </button>
     </div>
+    
   </section>
 
 
@@ -566,6 +545,25 @@
       }, 3000);
     });
   </script>
+  <script>
+     const btn = document.getElementById("seeMoreBtn");
+const hiddenProjects = document.querySelectorAll(".hidden-project");
+
+let expanded = false;
+
+btn.addEventListener("click", () => {
+    expanded = !expanded;
+
+    hiddenProjects.forEach(project => {
+        project.classList.toggle("show", expanded);
+    });
+
+    btn.textContent = expanded ? "Show Less" : "See More Projects";
+});
+  </script>
+
+  
+  
 
 </body>
 </html>
